@@ -221,4 +221,4 @@ pip-log.txt
 #################
 
 # Web shortcuts
-*.url
+#*.url
