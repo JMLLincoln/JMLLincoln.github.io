@@ -76,19 +76,31 @@ function keyPush(evt) {
 	
 	    case 65:
 		case 37:
-			playerVelocityX=-1;playerVelocityY = 0;
+			if (playerVelocityX != 1) {
+				playerVelocityX=-1;
+				playerVelocityY = 0;
+			}
 			break;
 		case 87:
 		case 38:
-			playerVelocityX = 0;playerVelocityY=-1;
+			if (playerVelocityY != 1) {
+				playerVelocityX = 0;
+				playerVelocityY=-1;
+			}
 			break;
 		case 68:
 		case 39:
-			playerVelocityX = 1;playerVelocityY = 0;
+			if (playerVelocityX != -1) {
+				playerVelocityX = 1;
+				playerVelocityY = 0;
+			}
 			break;
 		case 83:
 		case 40:
-			playerVelocityX = 0;playerVelocityY = 1;
+			if (playerVelocityY != -1) {
+				playerVelocityX = 0;
+				playerVelocityY = 1;
+			}
 			break;
 	}
 }
