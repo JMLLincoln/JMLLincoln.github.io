@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Snake </title>
+		<link rel="stylesheet" type="text/css" href="play.css">
+		<script type="text/javascript" src="game.js" async></script>
+	</head>
+
+	<body>
+	<a href="../jsjunk.html" class="icon-button">
+		<div class="icon-play"></div>
+	</a>
+	<div class="container">
+		<div id="form" class="form">
+			<div class="butts">
+				<div class="button" onclick="completeForm(8)"> Easy </div>
+				<div class="button" onclick="completeForm(15)"> Medium </div>
+				<div class="button" onclick="completeForm(30)"> Hard </div>
+			</div>
+		</div>
+		<canvas id="gc" width="800px" height="800px"></canvas>
+		<p id="score"> Current Score: 0  </p>
+		<p id="hiscore"> High Score: 0 </p>
+	</div>
+	</body>
+</html>

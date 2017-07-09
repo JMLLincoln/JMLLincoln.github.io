@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Sand Piles </title>
+		<link rel="stylesheet" type="text/css" href="play.css">
+		<script type="text/javascript" src="game.js" async></script>
+	</head>
+	
+	<body>
+		<a href="../jsjunk.html" class="icon-button">
+			<div class="icon-play"></div>
+		</a>
+		<p class="text">
+			Not much of a game but after seeing
+			<a href="https://www.youtube.com/watch?v=1MtEUErz7Gg">
+				this video
+			</a>
+			I was inspired to program it.
+			<br>
+			I guess you could fill some cells and try and get them to empty as much as possible?
+			<br>
+			Click update to create the grid.
+		</p>
+		<form id="options">
+			<label> Grid Size: </label>
+			<input type="text" size="1" value="3"></input>
+			<label> x </label>
+			<input type="text" size="1" value="3"></input>
+			<!--<label> Increase by: </label>
+			<input type="text" size="1" value="1"></input>-->
+			<input type="button" onclick="UpdateGrid()" value="Update"></input>
+		</form>
+		
+		<br>
+		
+		<table id="grid" class="grid" border="1px", cellspacing="0">
+		
+		</table>
+	</body>
+</html>

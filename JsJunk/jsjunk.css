@@ -1,0 +1,90 @@
+body {
+	background-color: #ffca99;
+	font-family: 'Roboto', sans-serif;
+}
+
+.title {
+	margin-top: 40px;
+}
+
+.container {
+	left: 0;
+	top: 5%;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+}
+
+.box {
+	width: 1600px;
+	height: 850px;
+	border-radius: 2%;
+	border-color: #777;
+	border-style: solid;
+	display: inline-block;
+	text-align: center;
+	background-color: #DDD;
+	box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 
+				6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.subText {
+	margin-left: 500px;
+	width: 600px;
+}
+
+.smallBox {
+	list-style-type: none;
+	display: inline-block;
+}
+
+.gameEntry {
+	display: inline-block;
+	width: 250px;
+	height: 200px;
+	padding: 10px;
+	margin-bottom: 50px;
+	margin-right: 10px;
+	border-style: dashed;
+	border-color: #AAA;
+	background-color: #EEE;
+	position: relative;
+}
+.gameText {
+	height: 95px;
+}
+.gameImage {
+	opacity: 0;
+	float: left;
+	position: absolute;
+	left: 4px;
+	top: 4px;
+	z-index: 1;
+	width: 262px;
+	height: 180px;
+	transition: 0.2s;
+}
+.gameImage:hover {
+	opacity: 1;
+}
+
+.gameButton {
+    background-color: #FFA959;
+    border: none;
+    color: #FFF;
+    padding:4px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+	border-radius: 10%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+				0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.gameButton:hover {
+	background-color: #BA793D;
+}
+.gameButtonText {
+	width: 40px;
+	margin: 8px;
+}
