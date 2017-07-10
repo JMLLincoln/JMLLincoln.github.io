@@ -28,3 +28,8 @@ Really, this Readme file is a notepad for me; you can read it if you want but it
 	+ add a page for the cv, 
 	+ or just link to a pdf, 
 	+ or maybe both, whichever
+
+4. Different Screens and Devices
+	+ add css to support different devices 
+	+ attempt to get a polished looking website on various screen sizes
+	+ possibly add ios and android support for the games as well
