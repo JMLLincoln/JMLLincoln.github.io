@@ -222,3 +222,6 @@ pip-log.txt
 
 # Web shortcuts
 *.url
+
+# Template folder
+JsJunk/template/

@@ -159,14 +159,11 @@ body {
 }
 
 .icon-button {
-	position: absolute;
-	display: inline-block;
+	position: relative;
 	cursor: pointer;
-	top: 20px;
-	left: 500px;
-	margin: 0;
-	padding: 5px;
-	z-index: 10;
+	display: inline-block;
+	left: -485px;
+	top: 30px;
 }
 
 .icon-play{
