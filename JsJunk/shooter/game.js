@@ -79,11 +79,11 @@ function init() {
 	enemies = [];	
 	// Size, Movespeed, Turnrate, Damage, Health, Bounty
 	enemyTypes = [
-		[10, 8, 60, 2, 5, 10],
-		[20, 7, 50, 4, 10, 20],
-		[30, 6, 35, 6, 10, 20],
-		[40, 5, 20, 8, 10, 20],
-		[50, 4, 5, 10, 20, 40]
+		[10, 8, 60, 3, 5, 10],
+		[20, 7, 50, 5, 10, 20],
+		[30, 6, 35, 8, 10, 20],
+		[40, 5, 20, 10, 15, 20],
+		[50, 4, 5, 15, 20, 40]
 	];
 	spawnPoints = [
 		{x : 50, y: 50}, 
@@ -214,15 +214,14 @@ function updateEnemies() {
 	}
 	
 	for (i = 0; i < enemies.length; i++) {	
-		console.log(enemies[i].health);
 		for (j = 0; j < bullets.length; j++) {
-			if (bullets[j].posX > enemies[i].posX - enemies[i].size && 
-				bullets[j].posX < enemies[i].posX + enemies[i].size && 
-				bullets[j].posY > enemies[i].posY - enemies[i].size && 
-				bullets[j].posY < enemies[i].posY + enemies[i].size) {
+			if (bullets[j].posX + (bullets[j].size / 2) > enemies[i].posX - (enemies[i].size / 2) && 
+				bullets[j].posX - (bullets[j].size / 2) < enemies[i].posX + (enemies[i].size / 2) && 
+				bullets[j].posY + (bullets[j].size / 2) > enemies[i].posY - (enemies[i].size / 2) && 
+				bullets[j].posY - (bullets[j].size / 2) < enemies[i].posY + (enemies[i].size / 2)) {
 					
 				enemies[i].health -= bullets[j].damage;
-				if (enemies[i].health == 0 || bullets[j].damage <= 0) {
+				if (enemies[i].health >= 0 || bullets[j].damage <= 0) {
 					toClean.push(["bullet", j]);
 				} else {
 					bullets[j].damage -= Math.abs(enemies[i].health);
@@ -236,13 +235,21 @@ function updateEnemies() {
 			continue;
 		}
 		
+		if (playerX + (playerWidth / 2) > enemies[i].posX - (enemies[i].size / 2) && 
+			playerX - (playerWidth / 2) < enemies[i].posX + (enemies[i].size / 2) && 
+			playerY + (playerHeight / 2) > enemies[i].posY - (enemies[i].size / 2) && 
+			playerY - (playerHeight / 2) < enemies[i].posY + (enemies[i].size / 2)) {
+			
+			currentHealth -= enemies[i].damage;
+			toClean.push(["enemy", i]);
+		}
+		
 		x = playerX - enemies[i].posX;
 		y = playerY - enemies[i].posY;
 		distance = Math.pow(x, 2) + Math.pow(y, 2);
 		
-		if (distance < 1100) {
-			currentHealth -= 10;
-			toClean.push(["enemy", i]);
+		if (distance < 600) {
+			continue;
 		} else {
 			
 			angle = Math.atan2(y, x);
@@ -268,14 +275,27 @@ function updateEnemies() {
 
 function updateCleanup() {
 	
-	for (i = 0; i < toClean.length; i++) {
-		
+	swapped = true;
+	while (swapped) {
+		swapped = false;
+		for (i = 0; i < toClean.length - 1; i++) {
+			if (toClean[i][1] < toClean[i + 1][1]) {
+				temp = toClean[i];
+				toClean[i] = toClean[i + 1];
+				toClean[i + 1] = temp;
+				swapped = true;
+			}
+		}
+	}
+	
+	for (i = 0; i < toClean.length; i++) {	
 		if (toClean[i][0] == "enemy") {
 			enemies.splice(toClean[i][1], 1);
 		} else if (toClean[i][0] == "bullet") {
 			bullets.splice(toClean[i][1], 1);
 		}
 	}
+	
 	toClean = [];
 }
 
