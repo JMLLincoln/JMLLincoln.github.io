@@ -38,7 +38,7 @@ window.onload = function() {
 	
 	document.addEventListener("keydown", keyPressed);
 	document.addEventListener("keyup", keyReleased);
-	canvas.addEventListener("mousemove", trackMouse);
+	document.getElementById("overlay").addEventListener("mousemove", trackMouse);
 }
 
 function init() {
