@@ -7,7 +7,6 @@ canvas {
 	border-style: solid;
 	border-color: #666;
 	background-color: #DDD;
-	cursor: crosshair;
 }
 
 .gamesize {
@@ -60,6 +59,7 @@ canvas {
 }
 
 .overlay {
+	cursor: crosshair;
 	opacity: 0.2;
 	border-style: solid;
 	display: inline-block;
@@ -82,7 +82,7 @@ canvas {
 .bar1, .bar2, .bar3 {
 	width: 20px;
 	height: 3px;
-	background-color: #111;
+	background-color: #FFF;
 	margin: 3px 4px;
 }
 
