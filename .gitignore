@@ -1,3 +1,21 @@
+
+#################
+## Custom 
+#################
+
+# Web shortcuts
+*.url
+
+# Template folder
+JsJunk/template/
+
+# Unf folders
+JsJunk/platforms/
+JsJunk/bullethell/
+JsJunk/pathfinding/
+JsJunk/testing/
+
+
 #################
 ## Eclipse
 #################
@@ -214,14 +232,3 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-
-
-#################
-## Custom 
-#################
-
-# Web shortcuts
-*.url
-
-# Template folder
-JsJunk/template/
