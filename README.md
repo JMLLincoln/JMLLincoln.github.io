@@ -1,5 +1,5 @@
-# JakeMLyons.github.io
-[Quick link to the page](https://jakemlyons.github.io)
+# JMLLincoln.github.io
+[Quick link to the page](https://jmllincoln.github.io)
 
 Really, this Readme file is a notepad for me; you can read it if you want but it won't be the slightest bit life changing.
 
